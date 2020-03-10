@@ -113,32 +113,32 @@ def handwritingClassTest():
     print("\nthe total number of errors is: %d" % errorCount)
     print("\nthe total error rate is: %f" % (errorCount/float(mTest)))
 
-def text1():
+def test1():
     group, labels = createDataSet()
     res = classify0([0,0], group, labels, 3)
     print(res)
 
-def text2():
+def test2():
     datingDataMat, datingLabels = file2matrix('datingTestSet2.txt')
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.scatter(datingDataMat[:,1], datingDataMat[:,2], 15.0*array(datingLabels),15.0*array(datingLabels))
     plt.show()
 
-def text3():
+def test3():
     datingDataMat,datingLabels = file2matrix('datingTestSet2.txt')       #load data setfrom file
     normMat, ranges, minVals = autoNorm(datingDataMat)
     inArr = [20000,15,0]
     res = classify0((inArr-minVals)/ranges, normMat ,datingLabels ,3)
     print(res)
 
-def text4():
+def test4():
     textVector = img2vector('testDigits/0_13.txt')
     print(textVector[0, 0:31])
 
-def text5():
+def test5():
     handwritingClassTest()
 
 if __name__ == "__main__":
-    text3()
+    test3()
     
